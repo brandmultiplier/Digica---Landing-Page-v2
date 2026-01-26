@@ -37,9 +37,9 @@ export const CTA: React.FC = () => {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
       
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to escape the Pilot Graveyard?</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-6">Stop guessing. Start seeing.</h2>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Stop building demos. Start building systems that survive the factory floor.
+          Get a free assessment of where your hidden losses are — and how much they're costing you.
         </p>
         
         {/* HubSpot Form Container - Wrapped in white for visibility */}

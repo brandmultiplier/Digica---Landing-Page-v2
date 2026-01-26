@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Customers } from './components/Customers';
-import { PilotGraveyard } from './components/PilotGraveyard';
+import { BlindSpots } from './components/BlindSpots';
 import { Difference } from './components/Difference';
 import { CaseStudies } from './components/CaseStudies';
 import { Process } from './components/Process';
@@ -20,7 +20,7 @@ function HomePage() {
       <main>
         <Hero />
         <Customers />
-        <PilotGraveyard />
+        <BlindSpots />
         <Process />
         <Difference />
         <Personas />

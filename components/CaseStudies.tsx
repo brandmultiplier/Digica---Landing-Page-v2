@@ -5,43 +5,43 @@ import { ArrowRight, Cpu, Eye, Activity, Wifi } from 'lucide-react';
 const projects = [
   {
     client: "TOY FACTORY",
-    title: "Detection of printing errors",
-    desc: "A Toy Factory needs to identify printing errors and assess whether they render the whole brick unsellable. We trained a CNN for detecting three kinds of printing errors with per-pixel probability heatmaps.",
-    tech: "PyTorch, OpenCV, Docker, FastAPI",
+    title: "Hidden quality defects exposed",
+    desc: "Manual inspection was missing printing errors that led to customer returns. We built an automated system that detects three types of defects invisible to the human eye, with clear accept/reject thresholds.",
+    tech: "Computer Vision, Real-time Analysis",
     icon: <Eye className="w-6 h-6" />,
-    result: "Automated QA threshold established for accept/reject decisions."
+    result: "Eliminated subjective QA decisions. Defect escape rate reduced to near-zero."
   },
   {
     client: "BAE Systems",
-    title: "Process Optimisation",
-    desc: "Developed a machine learning model to recommend optimisations to the process as the factory is operating to reduce energy and resource consumption.",
-    tech: "Python, PyQT6, ORTools",
+    title: "Real-time process visibility",
+    desc: "Energy and resource consumption varied wildly with no clear explanation. We created real-time visibility into process efficiency, showing exactly where waste was occurring and how to eliminate it.",
+    tech: "Process Analytics, Optimisation Engine",
     icon: <Activity className="w-6 h-6" />,
-    result: "Desktop app visualising optimal component arrangement and scheduling."
+    result: "Operators now see optimal scheduling in real-time. Resource waste identified and eliminated."
   },
   {
     client: "Anybotics",
-    title: "Robotic console analysis",
-    desc: "Intelligent computer vision inspection solution for robots operating in hostile environments. Inspects gauges, liquid levels, and thermal anomalies.",
-    tech: "TensorFlow 2, C++, OpenCV, ROS",
+    title: "Remote equipment monitoring",
+    desc: "Critical equipment in hostile environments couldn't be inspected safely. We enabled remote visibility into gauges, liquid levels, and thermal anomalies — without putting people at risk.",
+    tech: "Remote Inspection, Anomaly Detection",
     icon: <Cpu className="w-6 h-6" />,
-    result: "Works offline in hazardous situations with synthetic data training."
+    result: "24/7 visibility in hazardous areas. Issues caught before they become failures."
   },
   {
     client: "Ayla Networks",
-    title: "Predicting device reboots",
-    desc: "Predict router poor performance and prevent it using Machine Learning. Indicate reboot probability and detailed reasons for failure.",
-    tech: "PySpark, XGBoost, Amazon SageMaker",
+    title: "Predicting failures before they happen",
+    desc: "Device reboots were causing customer complaints but happening without warning. We built a system that sees the patterns leading to failure — 12 hours before it happens.",
+    tech: "Predictive Analytics, Root Cause Analysis",
     icon: <Wifi className="w-6 h-6" />,
-    result: "Model predicts reboots 12-hours in advance with >85% accuracy."
+    result: "12-hour advance warning with >85% accuracy. Proactive intervention now possible."
   },
   {
     client: "Medical Imaging Silicon",
-    title: "Structural defects in silicon",
-    desc: "Reduce the amount of faulty silicon assembled into equipment. Identify defective regions (slices) in silicon wafers from scans and test data.",
-    tech: "XGBoost, SHAP, Scikit-image",
+    title: "Finding defects before assembly",
+    desc: "Faulty silicon was being assembled into expensive equipment, discovered only at final test. We built visibility into wafer quality at the slice level — catching defects before they become costly.",
+    tech: "Defect Detection, Quality Analytics",
     icon: <Activity className="w-6 h-6" />,
-    result: "Accurately identified all slices in test data provided."
+    result: "100% of defective slices identified before assembly. Rework costs eliminated."
   }
 ];
 

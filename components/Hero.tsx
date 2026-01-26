@@ -151,24 +151,24 @@ export const Hero: React.FC = () => {
           
           <div className="inline-flex items-center gap-2 mb-6 border border-digica-red/30 bg-digica-red/10 px-3 py-1 rounded-sm backdrop-blur-sm">
              <div className="w-1.5 h-1.5 rounded-full bg-digica-red animate-pulse"></div>
-             <span className="text-digica-red font-mono text-xs tracking-widest uppercase">Smart Manufacturing</span>
+             <span className="text-digica-red font-mono text-xs tracking-widest uppercase">Operational Intelligence</span>
           </div>
-          
+
           <h1 className="text-4xl lg:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
-            85% of AI pilots fail. <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-digica-red to-red-400">We build the 15% that scale.</span>
+            Your KPIs say green. <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-digica-red to-red-400">Your margins say otherwise.</span>
           </h1>
-          
+
           <p className="text-xl text-gray-300 mb-8 font-light leading-relaxed max-w-lg">
-            Pioneering the use of advanced AI technology in real-world projects. If your AI dies when it touches real systems, you don’t have a model problem — you have an integration problem.
+            Hidden losses are bleeding your production line — and your reports can't see them. The gap between what your dashboards show and what's happening on the floor is costing you millions.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button 
+            <button
                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                className="inline-flex items-center justify-center gap-2 bg-digica-red text-white px-8 py-4 font-semibold hover:bg-red-600 transition-all rounded-sm shadow-[0_0_20px_rgba(217,60,44,0.3)] hover:shadow-[0_0_30px_rgba(217,60,44,0.5)] border border-digica-red/50"
             >
-              Book a Strategic Consultation
+              See What You're Missing
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
@@ -205,11 +205,11 @@ export const Hero: React.FC = () => {
                             <Activity className="w-12 h-12 text-digica-red" />
                         </div>
                         <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-gray-400 font-mono">UNPLANNED DOWNTIME</span>
-                          <span className="text-[10px] text-gray-600 font-mono">ID: #Err-09</span>
+                          <span className="text-xs text-gray-400 font-mono">HIDDEN DOWNTIME RECOVERED</span>
+                          <span className="text-[10px] text-gray-600 font-mono">ID: #DT-09</span>
                         </div>
                         <div className="text-3xl font-bold text-white font-mono tracking-tight">
-                          <LiveStat value={22} suffix="%" prefix="-" />
+                          <LiveStat value={22} suffix="%" prefix="+" />
                           <span className="text-sm font-sans font-normal text-gray-500 ml-2">/ Month</span>
                         </div>
                       </div>
@@ -219,12 +219,12 @@ export const Hero: React.FC = () => {
                             <Database className="w-12 h-12 text-digica-red" />
                         </div>
                         <div className="flex justify-between items-start mb-1">
-                           <span className="text-xs text-gray-400 font-mono">PRODUCTION YIELD</span>
-                           <span className="text-[10px] text-gray-600 font-mono">ID: #Yld-A1</span>
+                           <span className="text-xs text-gray-400 font-mono">SHIFT VARIANCE ELIMINATED</span>
+                           <span className="text-[10px] text-gray-600 font-mono">ID: #SV-A1</span>
                         </div>
                         <div className="text-3xl font-bold text-white font-mono tracking-tight">
-                          <LiveStat value={14} suffix="%" prefix="+" />
-                          <span className="text-sm font-sans font-normal text-gray-500 ml-2">/ Year</span>
+                          <LiveStat value={14} suffix="%" prefix="-" />
+                          <span className="text-sm font-sans font-normal text-gray-500 ml-2">Variance</span>
                         </div>
                       </div>
 
@@ -233,12 +233,12 @@ export const Hero: React.FC = () => {
                             <Cpu className="w-12 h-12 text-digica-red" />
                         </div>
                         <div className="flex justify-between items-start mb-1">
-                          <span className="text-xs text-gray-400 font-mono">DETECTION LEAD TIME</span>
-                          <span className="text-[10px] text-gray-600 font-mono">ID: #Lat-X2</span>
+                          <span className="text-xs text-gray-400 font-mono">MARGIN LEAKAGE FOUND</span>
+                          <span className="text-[10px] text-gray-600 font-mono">ID: #ML-X2</span>
                         </div>
                         <div className="text-3xl font-bold text-white font-mono tracking-tight">
-                          <LiveStat value={27} suffix="%" prefix="+" />
-                          <span className="text-sm font-sans font-normal text-gray-500 ml-2">Faster</span>
+                          <LiveStat value={3.2} suffix="%" prefix="" />
+                          <span className="text-sm font-sans font-normal text-gray-500 ml-2">of Revenue</span>
                         </div>
                       </div>
                     </div>

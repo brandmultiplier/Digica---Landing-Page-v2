@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, Gauge, Network } from 'lucide-react';
+import { Gauge, Factory, TrendingUp } from 'lucide-react';
 import { SectionHeading } from './SectionHeading';
 
 export const Personas: React.FC = () => {
@@ -11,60 +11,60 @@ export const Personas: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
           <SectionHeading dark>
-            Built for Decision-Makers Who've Seen Pilots Fail
+            Built for Leaders Who Know Something's Off
           </SectionHeading>
           <p className="text-xl text-gray-400 font-light max-w-3xl mt-2">
-            CTOs, plant directors, and transformation leads who need AI that actually works
+            Operations leaders who suspect their reports aren't telling the whole story
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          
-          {/* CTO Card */}
-          <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
-            <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
-               <Code2 className="w-6 h-6" />
-            </div>
-            
-            <h3 className="text-xl font-bold text-white mb-2">CTO / Head of Engineering</h3>
-            <p className="text-xs font-bold text-digica-red tracking-widest uppercase mb-6">
-              INTEGRATION WITHOUT DISRUPTION
-            </p>
-            
-            <p className="text-gray-400 leading-relaxed">
-              You need AI that doesn't break your stack. We build on top of legacy systems—PLCs, SCADA, ERP—without rip-and-replace. Scalable architecture. Zero production risk.
-            </p>
-          </div>
 
-          {/* VP Ops Card */}
+        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* VP Operations Card */}
           <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
             <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
                <Gauge className="w-6 h-6" />
             </div>
-            
-            <h3 className="text-xl font-bold text-white mb-2">VP Operations / Plant Director</h3>
+
+            <h3 className="text-xl font-bold text-white mb-2">VP Operations</h3>
             <p className="text-xs font-bold text-digica-red tracking-widest uppercase mb-6">
-              UPTIME, YIELD, THROUGHPUT
+              ACCOUNTABLE FOR THROUGHPUT
             </p>
-            
+
             <p className="text-gray-400 leading-relaxed">
-              You're judged on uptime and output. We deliver predictive alerts that prevent unplanned downtime, improve yield, and stabilise throughput—without disrupting operations.
+              You're accountable for throughput. But your data shows you last shift, not this one. Get real-time visibility into what's actually happening — before the end-of-month surprise.
             </p>
           </div>
 
-          {/* Digital Transform Card */}
+          {/* Plant Director Card */}
+          <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
+            <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
+               <Factory className="w-6 h-6" />
+            </div>
+
+            <h3 className="text-xl font-bold text-white mb-2">Plant Director</h3>
+            <p className="text-xs font-bold text-digica-red tracking-widest uppercase mb-6">
+              EYES ON THE FLOOR
+            </p>
+
+            <p className="text-gray-400 leading-relaxed">
+              You know something's off. The numbers don't match what you see on the floor. Finally get the data that confirms what your instincts are telling you — and the evidence to fix it.
+            </p>
+          </div>
+
+          {/* COO Card */}
           <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
              <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
-               <Network className="w-6 h-6" />
+               <TrendingUp className="w-6 h-6" />
             </div>
-            
-            <h3 className="text-xl font-bold text-white mb-2">Head of Digital Transformation</h3>
+
+            <h3 className="text-xl font-bold text-white mb-2">COO</h3>
             <p className="text-xs font-bold text-digica-red tracking-widest uppercase mb-6">
-              ROADMAP & ROI
+              MARGIN RESPONSIBILITY
             </p>
-            
+
             <p className="text-gray-400 leading-relaxed">
-              You're building the future—but pilots keep dying. We deliver cross-system orchestration, unified data layers, and 90-day ROI so your transformation roadmap survives executive scrutiny.
+              Every point of OEE is millions. How much are you leaving on the table? See the hidden losses across all your facilities — and know exactly where to focus for maximum impact.
             </p>
           </div>
 

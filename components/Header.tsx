@@ -76,12 +76,12 @@ export const Header: React.FC = () => {
           >
             Who is Digica
           </a>
-          <a 
-            href="#problem" 
+          <a
+            href="#problem"
             onClick={(e) => handleScrollTo(e, 'problem')}
             className="text-sm font-medium text-gray-600 hover:text-digica-red transition-colors"
           >
-            The Pilot Graveyard
+            Hidden Losses
           </a>
           <a 
             href="#process" 
@@ -97,11 +97,11 @@ export const Header: React.FC = () => {
           >
             Case Studies
           </a>
-          <button 
+          <button
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-digica-red text-white px-5 py-2 text-sm font-medium hover:bg-red-700 transition-colors rounded-sm"
           >
-            Book Consultation
+            Free Assessment
           </button>
         </nav>
 
@@ -122,12 +122,12 @@ export const Header: React.FC = () => {
           >
             Who is Digica
           </a>
-          <a 
-            href="#problem" 
-            className="text-sm font-medium text-gray-600" 
+          <a
+            href="#problem"
+            className="text-sm font-medium text-gray-600"
             onClick={(e) => handleScrollTo(e, 'problem')}
           >
-            The Pilot Graveyard
+            Hidden Losses
           </a>
           <a 
             href="#process" 
@@ -143,14 +143,14 @@ export const Header: React.FC = () => {
           >
             Case Studies
           </a>
-          <button 
+          <button
             onClick={() => {
               setIsMobileMenuOpen(false);
               document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
             className="bg-digica-red text-white px-5 py-2 text-sm font-medium text-center rounded-sm w-full"
           >
-            Book Consultation
+            Free Assessment
           </button>
         </div>
       )}
