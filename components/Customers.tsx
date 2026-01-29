@@ -44,9 +44,9 @@ export const Customers: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6">
         <SectionHeading>Who is Digica</SectionHeading>
         <p className="text-gray-600 mb-12 max-w-none text-lg leading-relaxed">
-          Digica is the partner that brings AI from demo to production. Based in Europe, our team of 80+ data scientists and software engineers specialises in AI and machine learning for industry leaders. Our clients—including Meta, AMD, Roche, and LEGO—prove our commitment to real operational impact. The logos you see are companies that trust Digica to deliver production-grade AI.
+          Digica is the partner that brings AI from demo to production. Based in Europe, our team of 80+ data scientists and software engineers specialises in AI and machine learning for industry leaders. Our clients—including Meta, AMD, Roche, and Dyson—prove our commitment to real operational impact. The logos you see are companies that trust Digica to deliver production‑grade AI.
         </p>
-        
+
         <div className="relative w-full mask-linear-fade mt-8">
           {/* Gradient Masks for smooth fade effect on edges */}
           <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
@@ -55,7 +55,7 @@ export const Customers: React.FC = () => {
           {/* Infinite Scrolling Container */}
           <div className="flex w-max hover:pause-animation">
             <div className="flex items-center gap-16 animate-scroll">
-              
+
               {/* Render Logos Twice for seamless loop */}
               {[...logos, ...logos].map((logo, i) => (
                 <div key={`${logo.name}-${i}`} className="flex items-center justify-center w-40 h-24 flex-shrink-0 group transition-all duration-300">
@@ -67,7 +67,7 @@ export const Customers: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <style>{`
         .hover\\:pause-animation:hover .animate-scroll {
           animation-play-state: paused;

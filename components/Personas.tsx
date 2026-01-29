@@ -23,7 +23,7 @@ export const Personas: React.FC = () => {
           {/* VP Operations Card */}
           <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
             <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
-               <Gauge className="w-6 h-6" />
+              <Gauge className="w-6 h-6" />
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2">VP Operations</h3>
@@ -32,14 +32,17 @@ export const Personas: React.FC = () => {
             </p>
 
             <p className="text-gray-400 leading-relaxed">
-              You're accountable for throughput. But your data shows you last shift, not this one. Get real-time visibility into what's actually happening — before the end-of-month surprise.
+              You're accountable for throughput. But your data shows you last shift, not this one.
+            </p>
+            <p className="text-white font-bold mt-4 leading-relaxed">
+              Get real-time visibility into what's actually happening — before the end-of-month surprise.
             </p>
           </div>
 
           {/* Plant Director Card */}
           <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
             <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
-               <Factory className="w-6 h-6" />
+              <Factory className="w-6 h-6" />
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2">Plant Director</h3>
@@ -48,14 +51,17 @@ export const Personas: React.FC = () => {
             </p>
 
             <p className="text-gray-400 leading-relaxed">
-              You know something's off. The numbers don't match what you see on the floor. Finally get the data that confirms what your instincts are telling you — and the evidence to fix it.
+              You know something's off. The numbers don't match what you see on the floor.
+            </p>
+            <p className="text-white font-bold mt-4 leading-relaxed">
+              Finally get the data that confirms what your instincts are telling you — and the evidence to fix it.
             </p>
           </div>
 
           {/* COO Card */}
           <div className="bg-white/5 backdrop-blur-sm p-8 border border-white/10 rounded-sm hover:border-digica-red/50 transition-colors group">
-             <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
-               <TrendingUp className="w-6 h-6" />
+            <div className="w-12 h-12 rounded border border-white/20 flex items-center justify-center mb-8 text-gray-300 group-hover:text-digica-red group-hover:border-digica-red transition-colors">
+              <TrendingUp className="w-6 h-6" />
             </div>
 
             <h3 className="text-xl font-bold text-white mb-2">COO</h3>
@@ -64,7 +70,10 @@ export const Personas: React.FC = () => {
             </p>
 
             <p className="text-gray-400 leading-relaxed">
-              Every point of OEE is millions. How much are you leaving on the table? See the hidden losses across all your facilities — and know exactly where to focus for maximum impact.
+              Every point of OEE is millions. How much are you leaving on the table?
+            </p>
+            <p className="text-white font-bold mt-4 leading-relaxed">
+              See the hidden losses across all your facilities — and know exactly where to focus for maximum impact.
             </p>
           </div>
 
