@@ -42,7 +42,7 @@ export const Customers: React.FC = () => {
   return (
     <section id="about" className="py-16 bg-white border-b border-gray-200 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <SectionHeading>Who is Digica</SectionHeading>
+        <SectionHeading>Who are Digica</SectionHeading>
         <p className="text-gray-600 mb-12 max-w-none text-lg leading-relaxed">
           Digica is the partner that brings AI from demo to production. Based in Europe, our team of 80+ data scientists and software engineers specialises in AI and machine learning for industry leaders. Our clients—including Meta, AMD, Roche, and Dyson—prove our commitment to real operational impact. The logos you see are companies that trust Digica to deliver production‑grade AI.
         </p>

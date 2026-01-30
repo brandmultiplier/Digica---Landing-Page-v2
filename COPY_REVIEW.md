@@ -10,7 +10,7 @@
 Intelligent Software
 
 **Voci menu:**
-- Who is Digica
+- Who are Digica
 - Hidden Losses
 - How We Work
 - Case Studies
@@ -50,7 +50,7 @@ PROVEN IMPACT IN: DEFENCE · MEDICAL · IOT · MANUFACTURING
 ## 3. WHO IS DIGICA (Social Proof)
 
 **Titolo sezione:**
-Who is Digica
+Who are Digica
 
 **Body copy:**
 Digica is the partner that brings AI from demo to production. Based in Europe, our team of 80+ data scientists and software engineers specialises in AI and machine learning for industry leaders. Our clients—including Meta, AMD, Roche, and LEGO—prove our commitment to real operational impact. The logos you see are companies that trust Digica to deliver production-grade AI.
@@ -311,7 +311,7 @@ Digica specialises in taking industrial AI from failed pilots to scaled producti
 
 ### About (Profilo aziendale alternativo)
 
-**Titolo:** Who is Digica?
+**Titolo:** Who are Digica?
 
 - Software Services company specialising in real world AI / Machine Learning projects.
 - Privately owned, established 2016.
