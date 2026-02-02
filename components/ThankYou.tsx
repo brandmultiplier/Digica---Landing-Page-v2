@@ -1,8 +1,46 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Footer } from './Footer';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
 export const ThankYou: React.FC = () => {
+  const [meetingsUrl, setMeetingsUrl] = useState<string>('');
+
   useEffect(() => {
+    // Retrieve form data from localStorage
+    const storedData = localStorage.getItem('hubspotFormData');
+    let formData: FormData = { firstName: '', lastName: '', email: '' };
+
+    if (storedData) {
+      try {
+        formData = JSON.parse(storedData);
+        // Clear the data after reading
+        localStorage.removeItem('hubspotFormData');
+      } catch (e) {
+        console.error('Failed to parse form data from localStorage');
+      }
+    }
+
+    // Build the meetings URL with prefill parameters
+    const baseUrl = 'https://meetings.hubspot.com/ben952/manufacturing-ai-strategy-session';
+    const params = new URLSearchParams();
+    params.append('embed', 'true');
+
+    if (formData.firstName) params.append('firstName', formData.firstName);
+    if (formData.lastName) params.append('lastName', formData.lastName);
+    if (formData.email) params.append('email', formData.email);
+
+    setMeetingsUrl(`${baseUrl}?${params.toString()}`);
+  }, []);
+
+  useEffect(() => {
+    // Only load script after URL is set
+    if (!meetingsUrl) return;
+
     // Check if script already exists to avoid duplicates
     if (document.querySelector('script[src*="MeetingsEmbedCode.js"]')) {
       return;
@@ -13,7 +51,7 @@ export const ThankYou: React.FC = () => {
     script.type = 'text/javascript';
     script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
     script.async = true;
-    
+
     script.onerror = () => {
       console.error('Failed to load HubSpot Meetings Embed script');
     };
@@ -27,7 +65,7 @@ export const ThankYou: React.FC = () => {
         document.body.removeChild(existingScript);
       }
     };
-  }, []);
+  }, [meetingsUrl]);
 
   return (
     <div className="min-h-screen bg-white font-sans selection:bg-digica-red selection:text-white">
@@ -44,13 +82,15 @@ export const ThankYou: React.FC = () => {
               Schedule your Manufacturing AI Strategy Session below
             </p>
           </div>
-          
+
           {/* HubSpot Meetings Embed Container */}
           <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
-            <div 
-              className="meetings-iframe-container" 
-              data-src="https://meetings.hubspot.com/ben952/manufacturing-ai-strategy-session?embed=true"
-            ></div>
+            {meetingsUrl && (
+              <div
+                className="meetings-iframe-container"
+                data-src={meetingsUrl}
+              ></div>
+            )}
           </div>
         </div>
       </main>

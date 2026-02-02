@@ -16,7 +16,17 @@ export const CTA: React.FC = () => {
           portalId: "3066619",
           formId: "9d155bcb-5412-473e-9b71-190a6c836718",
           region: "na1",
-          target: '#hubspot-form-container'
+          target: '#hubspot-form-container',
+          onFormSubmit: ($form: any) => {
+            // Capture form data before HubSpot redirects
+            const formData = {
+              firstName: $form.find('input[name="firstname"]').val() || '',
+              lastName: $form.find('input[name="lastname"]').val() || '',
+              email: $form.find('input[name="email"]').val() || ''
+            };
+            // Store in localStorage for the Thank You page to retrieve
+            localStorage.setItem('hubspotFormData', JSON.stringify(formData));
+          }
         });
       }
     };
@@ -35,16 +45,16 @@ export const CTA: React.FC = () => {
     <section id="contact" className="py-24 bg-digica-dark text-white relative overflow-hidden">
       {/* Abstract BG */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none"></div>
-      
+
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold mb-6">Stop guessing. Start seeing.</h2>
         <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
           Get a free assessment of where your hidden losses are — and how much they're costing you.
         </p>
-        
+
         {/* HubSpot Form Container - Wrapped in white for visibility */}
         <div className="max-w-xl mx-auto bg-white rounded-md p-6 md:p-8 shadow-2xl text-left text-gray-900">
-           <div id="hubspot-form-container"></div>
+          <div id="hubspot-form-container"></div>
         </div>
       </div>
     </section>
