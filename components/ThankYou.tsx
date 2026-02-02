@@ -11,28 +11,30 @@ export const ThankYou: React.FC = () => {
   const [meetingsUrl, setMeetingsUrl] = useState<string>('');
 
   useEffect(() => {
-    // Helper function to get cookie value
-    const getCookie = (name: string): string | null => {
-      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-      return match ? decodeURIComponent(match[2]) : null;
+    // First try to get data from URL parameters (most reliable, works across subdomains)
+    const urlParams = new URLSearchParams(window.location.search);
+    let formData: FormData = {
+      firstName: urlParams.get('firstName') || '',
+      lastName: urlParams.get('lastName') || '',
+      email: urlParams.get('email') || ''
     };
 
-    // Helper function to delete cookie
-    const deleteCookie = (name: string) => {
-      document.cookie = `${name}=; domain=.digica.com; path=/; max-age=0`;
-    };
+    // Fallback: try cookie if URL params are empty
+    if (!formData.firstName && !formData.lastName && !formData.email) {
+      const getCookie = (name: string): string | null => {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        return match ? decodeURIComponent(match[2]) : null;
+      };
 
-    // Retrieve form data from cookie
-    const storedData = getCookie('hubspotFormData');
-    let formData: FormData = { firstName: '', lastName: '', email: '' };
-
-    if (storedData) {
-      try {
-        formData = JSON.parse(storedData);
-        // Clear the cookie after reading
-        deleteCookie('hubspotFormData');
-      } catch (e) {
-        console.error('Failed to parse form data from cookie');
+      const storedData = getCookie('hubspotFormData');
+      if (storedData) {
+        try {
+          formData = JSON.parse(storedData);
+          // Clear the cookie after reading
+          document.cookie = `hubspotFormData=; domain=.digica.com; path=/; max-age=0`;
+        } catch (e) {
+          console.error('Failed to parse form data from cookie');
+        }
       }
     }
 
