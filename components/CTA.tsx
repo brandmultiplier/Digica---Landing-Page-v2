@@ -2,6 +2,32 @@ import React, { useEffect } from 'react';
 
 export const CTA: React.FC = () => {
   useEffect(() => {
+    // Listen for HubSpot form submission via postMessage
+    const handleMessage = (event: MessageEvent) => {
+      if (!event.data || event.data.type !== 'hsFormCallback') return;
+      if (event.data.eventName !== 'onFormSubmit') return;
+
+      const fields = event.data.data;
+      const vals: Record<string, string> = {};
+      fields.forEach((f: { name: string; value: string }) => {
+        vals[f.name] = f.value;
+      });
+
+      const firstname = encodeURIComponent(vals.firstname || '');
+      const lastname = encodeURIComponent(vals.lastname || '');
+      const email = encodeURIComponent(vals.email || '');
+
+      // Redirect to thank you page with form data as URL params
+      window.location.href =
+        'https://manufacturing.digica.com/thank-you' +
+        '?firstName=' + firstname +
+        '&lastName=' + lastname +
+        '&email=' + email;
+    };
+
+    window.addEventListener('message', handleMessage);
+
+    // Load HubSpot form script
     const script = document.createElement('script');
     script.src = "//js.hsforms.net/forms/embed/v2.js";
     script.charset = "utf-8";
@@ -16,23 +42,7 @@ export const CTA: React.FC = () => {
           portalId: "3066619",
           formId: "9d155bcb-5412-473e-9b71-190a6c836718",
           region: "na1",
-          target: '#hubspot-form-container',
-          onFormSubmit: () => {
-            // Capture form data using DOM queries (HubSpot embed v2 doesn't use jQuery)
-            const container = document.getElementById('hubspot-form-container');
-            const firstName = (container?.querySelector('input[name="firstname"]') as HTMLInputElement)?.value || '';
-            const lastName = (container?.querySelector('input[name="lastname"]') as HTMLInputElement)?.value || '';
-            const email = (container?.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
-
-            console.log('HubSpot form submitted:', { firstName, lastName, email });
-
-            const formData = { firstName, lastName, email };
-            // Store in cookie with domain=.digica.com for cross-subdomain access
-            const cookieValue = encodeURIComponent(JSON.stringify(formData));
-            document.cookie = `hubspotFormData=${cookieValue}; domain=.digica.com; path=/; max-age=300; SameSite=Lax`;
-
-            console.log('Cookie set:', document.cookie);
-          }
+          target: '#hubspot-form-container'
         });
       }
     };
@@ -40,7 +50,7 @@ export const CTA: React.FC = () => {
     document.body.appendChild(script);
 
     return () => {
-      // Clean up script if component unmounts
+      window.removeEventListener('message', handleMessage);
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
