@@ -11,17 +11,28 @@ export const ThankYou: React.FC = () => {
   const [meetingsUrl, setMeetingsUrl] = useState<string>('');
 
   useEffect(() => {
-    // Retrieve form data from localStorage
-    const storedData = localStorage.getItem('hubspotFormData');
+    // Helper function to get cookie value
+    const getCookie = (name: string): string | null => {
+      const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      return match ? decodeURIComponent(match[2]) : null;
+    };
+
+    // Helper function to delete cookie
+    const deleteCookie = (name: string) => {
+      document.cookie = `${name}=; domain=.digica.com; path=/; max-age=0`;
+    };
+
+    // Retrieve form data from cookie
+    const storedData = getCookie('hubspotFormData');
     let formData: FormData = { firstName: '', lastName: '', email: '' };
 
     if (storedData) {
       try {
         formData = JSON.parse(storedData);
-        // Clear the data after reading
-        localStorage.removeItem('hubspotFormData');
+        // Clear the cookie after reading
+        deleteCookie('hubspotFormData');
       } catch (e) {
-        console.error('Failed to parse form data from localStorage');
+        console.error('Failed to parse form data from cookie');
       }
     }
 

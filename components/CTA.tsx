@@ -24,8 +24,9 @@ export const CTA: React.FC = () => {
               lastName: $form.find('input[name="lastname"]').val() || '',
               email: $form.find('input[name="email"]').val() || ''
             };
-            // Store in localStorage for the Thank You page to retrieve
-            localStorage.setItem('hubspotFormData', JSON.stringify(formData));
+            // Store in cookie with domain=.digica.com for cross-subdomain access
+            const cookieValue = encodeURIComponent(JSON.stringify(formData));
+            document.cookie = `hubspotFormData=${cookieValue}; domain=.digica.com; path=/; max-age=300; SameSite=Lax`;
           }
         });
       }
