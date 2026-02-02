@@ -17,16 +17,21 @@ export const CTA: React.FC = () => {
           formId: "9d155bcb-5412-473e-9b71-190a6c836718",
           region: "na1",
           target: '#hubspot-form-container',
-          onFormSubmit: ($form: any) => {
-            // Capture form data before HubSpot redirects
-            const formData = {
-              firstName: $form.find('input[name="firstname"]').val() || '',
-              lastName: $form.find('input[name="lastname"]').val() || '',
-              email: $form.find('input[name="email"]').val() || ''
-            };
+          onFormSubmit: () => {
+            // Capture form data using DOM queries (HubSpot embed v2 doesn't use jQuery)
+            const container = document.getElementById('hubspot-form-container');
+            const firstName = (container?.querySelector('input[name="firstname"]') as HTMLInputElement)?.value || '';
+            const lastName = (container?.querySelector('input[name="lastname"]') as HTMLInputElement)?.value || '';
+            const email = (container?.querySelector('input[name="email"]') as HTMLInputElement)?.value || '';
+
+            console.log('HubSpot form submitted:', { firstName, lastName, email });
+
+            const formData = { firstName, lastName, email };
             // Store in cookie with domain=.digica.com for cross-subdomain access
             const cookieValue = encodeURIComponent(JSON.stringify(formData));
             document.cookie = `hubspotFormData=${cookieValue}; domain=.digica.com; path=/; max-age=300; SameSite=Lax`;
+
+            console.log('Cookie set:', document.cookie);
           }
         });
       }
